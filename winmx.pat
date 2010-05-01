@@ -10,5 +10,6 @@
 # http://lists.sourceforge.net/lists/listinfo/l7-filter-patterns
 #
 winmx
+# this needs to be more specific if possible, it matches when I connect to
+# irc.flamed.net
 \+.*p.*get
-

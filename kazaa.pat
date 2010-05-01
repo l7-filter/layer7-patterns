@@ -10,3 +10,7 @@ kazaa
 # while this is a valid http request, this will be caught because
 # the http pattern matches the response (and therefore the next packet)
 get /.hash=.* http/1.1|user-agent: kazaa
+
+# This is the pattern used by www.bandwidtharbitrator.com
+# It is unverified.  Does it work for you?  Post to the l7-filter-patterns
+# kazaa|icw.*]p

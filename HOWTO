@@ -8,12 +8,12 @@ blank lines are ignored.
 
 *** Regular Expressions ***
 
-At the moment, l7-filter uses a somewhat limited regexp implementation. 
-For instance, you cannot use (foo){3} to match "foofoofoo".  Nor can you
-use \013 to match ASCII octal 13.  Read the existing patterns for
-examples of what works.  We hope to eventually support identical syntax
-to GNU grep.  Unfortunately, bringing this fuctionality into kernel
-space is difficult.
+At the moment, l7-filter uses V8 regexps, which are somewhat limited
+(see http://www.hmug.org/man/3/regsub.html). In addition, we have added
+the capability to do perl-style non-printable character matches using
+the \xHH notation (i.e. to match a tab, use \x09). Notably, you CANNOT
+use bounds ("foo{3}" to match foofoofoo), character classes
+("[[:punct:]]" to match any punctuation) or backreferences.
 
 l7-filter is case insensitive.  Using upper case in your patterns is
 identical to using lower case. (Note that in versions <= 0.1.4, upper

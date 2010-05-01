@@ -13,5 +13,6 @@
 # also matches posts
 
 http
+#this should match more codes (304, 404, etc)
 (http.*(200 ok|302).*(connection:|content-type:|content-length:))|(post .* http/)
 

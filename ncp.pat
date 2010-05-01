@@ -10,14 +10,11 @@
 #
 #  *any reply buffer size
 # "" means service request
-#  |  means create a service connection
+#  | \x17\x17 means create a service connection
 #  | uu means destroy service connection
 # ncp reply
 # tncp means reply
 # 33 means service reply
 
-# WARNING: this pattern uses non-printable characters.  Be careful when
-# editing it!
-
 ncp
-dmdt.*.*(""||uu)|tncp.*33
+dmdt.*\x01.*(""|\x11\x11|uu)|tncp.*33

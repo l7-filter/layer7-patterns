@@ -6,9 +6,6 @@
 # l7-filter-patterns@lists.sf.net .  This list may be subscribed to at
 # http://lists.sourceforge.net/lists/listinfo/l7-filter-patterns
 
-# WARNING: This pattern uses non-printable characters, be careful when 
-# editing it!
-
 aim
 # See http://gridley.acns.carleton.edu/~straitm/final (and various other places)
 # The first bit matches OSCAR signon and data commands, but not sure what
@@ -21,7 +18,4 @@ aim
 # version)
 # The fourth one is a command string, followed by some stuff, then the
 # beginning of the "roasted" password
-(^\*(|).*)|(flapon)|(^\*.?.?.?.?)|(toc_signon.*0x)
-
-# pattern was just this:
-#\*(|).*
+(^\*(\x01|\x02).*\x03\x0b)|(flapon)|(^\*\x01.?.?.?.?\x01)|(toc_signon.*0x)

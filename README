@@ -2,7 +2,9 @@ These are patterns for use with the Linux layer 7 packet classifier.
 In order to use them, you will need to use the kernel patch and the
 modified version of tc available at http://sf.net/projects/l7-filter/
  
-There is a HOWTO at http://l7-filter.sf.net which explains how to use these.
+The miniHOWTO at http://l7-filter.sf.net explains how to use these.
+
+These patterns should be used only with version >= 0.2.0 of the kernel patch.
 
 Please report your experience with these patterns to 
 l7-filter-patterns@lists.sf.net .  You may subscribe to this list at 

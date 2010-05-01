@@ -6,19 +6,16 @@
 # http://lists.sourceforge.net/lists/listinfo/l7-filter-patterns
 #
 # name query
-#  means name query
+# \x01\x16 means name query
 #
 # registration NB
-#( or ) means registration
+# (\x16 or )\x16 means registration
 #
 # release NB (merged with registration)
-#0 means release
-
-# WARNING: this pattern uses non-printable characters.  Be careful when
-# editing it!
+# 0\x16 means release
 
 nbns
-|\)|0
+\x01\x10\x01|\)\x10\x01\x01|0\x10\x01
 
 
 

@@ -7,9 +7,6 @@
 # suggestions to that list as well. You may subscribe to this list at 
 # http://lists.sourceforge.net/lists/listinfo/l7-filter-patterns
 
-# WARNING: this pattern uses non-printable characters.  Be careful when 
-# editing it!
-
 yahoo
 # http://www.venkydude.com/articles/yahoo.htm says: 
 # All Yahoo commands start with YMSG.  
@@ -25,7 +22,4 @@ yahoo
 # 0xC080 is the standard argument separator, it should appear not long
 # after the "type of command" byte.
 
-^(ymsg|ypns|yhoo).......w.*À€
-
-# old patern.  Can't use upper case, 'cause we call tolower on everything
-#YMSG.......W.*À€
+^(ymsg|ypns|yhoo).?.?.?.?.?.?.?(w|t).*\xc0\x80
