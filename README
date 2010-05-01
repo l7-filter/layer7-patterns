@@ -1,3 +1,15 @@
 # These are patterns for use with the Linux layer 7 packet classifier. 
-# In order to use them, you will need to use the kernel patch and
+# In order to use them, you will need to use the kernel patch and the
 # modified version of tc available at http://sf.net/projects/l7-filter/
+# 
+# There is a HOWTO at http://l7-filter.sf.net which explains how to use these
+#
+# Please report your experience with these patterns to 
+# l7-filter-patterns@lists.sf.net .  You may subscribe to this list at 
+# http://lists.sourceforge.net/lists/listinfo/l7-filter-patterns
+# 
+# General discussion of the layer 7 classifier can be found on
+# l7-filter-developers@lists.sf.net
+# 
+# (This file is all commented so that it can be safely fed to the kernel 
+# along with the rest of the files in this directory.)
