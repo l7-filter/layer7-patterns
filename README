@@ -1,0 +1,3 @@
+# These are patterns for use with the Linux layer 7 packet classifier. 
+# In order to use them, you will need to use the kernel patch and
+# modified version of tc available at http://sf.net/projects/l7-filter/
