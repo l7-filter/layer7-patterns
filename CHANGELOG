@@ -1,7 +1,12 @@
 2003 09 2X
+I need to remember to include http in all the releases!  Sorry about that.
+Added jabber.
+
+2003 09 24
 Added socks, nntp.
 
 2003 09 22
+Releases from here on should only be used with >=0.3.0 of the kernel patch
 Some significant speed improvements (gopher is no longer slow enough to bring
 down the machine when searching large strings) and some small accuracy 
 improvements. 

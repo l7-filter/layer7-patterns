@@ -5,7 +5,7 @@ modified version of tc available at http://sf.net/projects/l7-filter/
 The HOWTO at http://l7-filter.sf.net explains how to use these.
 The HOWTO in this directory is a guide to writing patterns.
 
-These patterns should be used only with version >= 0.2.0 of the kernel patch.
+These patterns should be used only with version >= 0.3.0 of the kernel patch.
 
 The "weakpatterns" directory contains patterns that are too general for them
 to be really useful.  They are included because (1) they may be good enough
