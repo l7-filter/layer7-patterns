@@ -1,3 +1,11 @@
+2003 09 22
+Some significant speed improvements (gopher is no longer slow enough to bring
+down the machine when searching large strings) and some small accuracy 
+improvements. 
+Moved winmx and gopher to weakpatterns.  
+Added snmp, snmp-mon and snmp-trap
+
+
 2003 09 19
 Added Samba, telnet.
 Added weakpatterns directory, which now contains mysql, finger, netbios.  

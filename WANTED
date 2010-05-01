@@ -170,9 +170,9 @@ want	SMS-File		Microsoft SMS file transfer
 want	SMS-RC			Microsoft SMS remote control
 done	SMTP (Mail)		Simple Mail Transfer Protocol
 want	SNA			IBM's Systems Network Architecture protocol
-want	SNMP			Service group for both Simple Network Management Protocol monitor and traps
-want	SNMP Mon		Simple Network Management Protocol monitor
-want	SNMP Trap		Simple Network Management Protocol traps
+done	SNMP			Service group for both Simple Network Management Protocol monitor and traps
+done	SNMP Mon		Simple Network Management Protocol monitor
+done	SNMP Trap		Simple Network Management Protocol traps
 want	SOCKS			SOCKS Proxy Protocol
 ?	Spanning Tree	 	IEEE802.1 Bridge Spanning Tree
 done	SSH			Secure shell remote login protocol

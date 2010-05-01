@@ -17,13 +17,7 @@
 # thing the server sends is a 331.  All the above servers also send 
 # something including "password" after this code.
 ftp
-^220.*ftp|331.*password
+^220[\x09-\x0d -~]*ftp|331[\x09-\x0d -~]*password
 
-# when we can match across multiple packets, we can do this.  This will match
-# servers that choose not to say either "ftp" or "password", if any such 
-# servers exist.
-# 200.*USER.*331
-
-# this is no good.  Not all servers have []s or ()s after 220, nor
-# is this required by the FTP RFC
-# 220 .*ftp.*(\[.*\]|\(.*\))
+# This pattern is more precise, but takes longer to match. (3 packets vs. 1)
+#^220[\x09-\x0d -~]*USER[\x09-\x0d -~]*331

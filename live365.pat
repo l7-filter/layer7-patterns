@@ -1,4 +1,4 @@
-# live365 - A legal music distribution site (http://live365.com)
+# live365 - An Internet radio site (http://live365.com)
 #
 # This pattern was "contributed" (taken with permission) by the bandwidth 
 # arbitrator project (www.bandwidtharbitrator.com).

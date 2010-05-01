@@ -11,4 +11,4 @@ telnet
 # My telnet client sends 9 when I connect, so this should be fine.
 # This pattern could fail on a unchatty connection or it could be 
 # matched by something non-telnet spewing a lot of stuff in the fb-ff range.
-\xff[\xfb-\xfe].\xff[\xfb-\xfe].\xff[\xfb-\xfe]
+^\xff[\xfb-\xfe].\xff[\xfb-\xfe].\xff[\xfb-\xfe]

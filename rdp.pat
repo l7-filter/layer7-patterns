@@ -5,4 +5,5 @@
 # This list may be subscribed to at
 # http://lists.sourceforge.net/lists/listinfo/l7-filter-developers
 rdp
+# can we get rid of some of the .*s?
 rdpdr.*cliprdp.*rdpsnd 

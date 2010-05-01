@@ -13,7 +13,12 @@ gopher
 
 # Matches one of the file type characters, any characters, a tab, any 
 # characters, a tab something that has at least one letter (maybe something 
-# else), then a dot and at least two letters (see dns.pat), a tab and then a 
-# number which could be the start of a port number.
+# else), then a dot and at least two letters for a TLD (see dns.pat), a tab 
+# and then a number which could be the start of a port number.
 # i.e. "0About internet Gopher\tStuff:About us\trawBits.micro.umn.edu\t70"
-[1-9,\+TgI].*\x09.*\x09.*[a-z].*\..*[a-z][a-z]\x09[1-9]
+# [1-9,\+TgI].*\x09.*\x09.*[a-z].*\..*[a-z][a-z]\x09[1-9]
+
+# the above is very very VERY slow with our current regexp implmentation
+# this one won't bring your machine down, but is still at least an order
+# of magnitude slower than any other pattern:
+[1-9,\+TgI][\x09-\0d -~]*\x09[\x09-\0d -~]*\x09[a-z0-9\.]*\.[a-z][a-z].?.?\x09[1-9]

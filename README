@@ -3,21 +3,20 @@ In order to use them, you will need to use the kernel patch and the
 modified version of tc available at http://sf.net/projects/l7-filter/
  
 The HOWTO at http://l7-filter.sf.net explains how to use these.
+The HOWTO in this directory is a guide to writing patterns.
 
 These patterns should be used only with version >= 0.2.0 of the kernel patch.
-
-Please report your experience with these patterns to 
-l7-filter-developers@lists.sf.net .  You may subscribe to this list at 
-http://lists.sourceforge.net/lists/listinfo/l7-filter-developers
-
-The HOWTO in this directory is a guide to writing patterns.
 
 The "weakpatterns" directory contains patterns that are too general for them
 to be really useful.  They are included because (1) they may be good enough
 for some purposes and (2) it will make it easier for people to improve them
 if there's something to start with.
 
-Please note that many of these patterns were written by someone who didn't
-know anything about the protocol in question until he started doing google 
-searches for it.  So if you think a pattern is broken and you know better, 
-you probably do!
+Please report your experience with these patterns to 
+l7-filter-developers@lists.sf.net .  You may subscribe to this list at 
+http://lists.sourceforge.net/lists/listinfo/l7-filter-developers
+
+Please note that many of these patterns were written by someone (me,
+Matthew Strait) who didn't know anything about the protocol in question
+until he started doing google searches for it.  So if you think a
+pattern is broken and you know better, you probably do!  Let us know.

@@ -15,7 +15,10 @@ capability to do perl-style non-printable character matches using the
 are more limited than the ones you may be used to (for instance,
 grep's). Notably, you CANNOT use bounds ("foo{3}" to match foofoofoo),
 character classes ("[[:punct:]]" to match any punctuation) or
-backreferences.
+backreferences.  
+
+If you want to check for printable characters, including whitespace,
+[\x09-\0d -~] is a reasonable way of doing it.
 
 l7-filter is case insensitive.  Using upper case in your patterns is
 identical to using lower case.
@@ -26,7 +29,7 @@ nulls.  Also, fields may appear shorter than expected.  For example, if
 a protocol has a 4 byte field and some of those bytes can be null, the
 field can appear to be any length from 0 to 4.
 
-*** What the filter sees ***
+*** What The Filter Sees ***
 
 The data to be matched is that of both the client and the server, in the
 order that it passes through the computer.  For instance, in FTP, the
@@ -38,9 +41,11 @@ FTP pattern is "220.*ftp|331.*password".  We plan to implement matching
 across packets Real Soon Now.  Once this is done, the pattern for FTP
 will be "200.*USER.*331" (read ftp.pat for why this is better).
 
-*** What makes a good pattern ***
+*** What Makes A Good Pattern ***
 
-A pattern must be neither too specific nor not specific enough.  
+There are two general guidelines:
+
+1) A pattern must be neither too specific nor not specific enough.  
 
 Example 1: "bear" for Bearshare is not specific enough.  This pattern
 could match a wide variety of non-Bearshare connections.  For instance a
@@ -50,6 +55,25 @@ Example 2: "220 .*ftp.*(\[.*\]|\(.*\))" for FTP is too specific.  Not
 all servers send ()s or []s after their 220.  In fact, servers are not
 required to send the string "ftp" at any time, but the vast majority
 do.  Good judgement and testing is necessary for instances such as this.
+
+2) It should use a minimum of processing power.  Thus, if it is possible
+to reduce the number of *'s, +'s and |'s in your pattern, you should do
+so.  In particular, ".*" really slows things down.  For instance, this
+pattern for gopher is bad.  Its use causes very noticable slowdowns on
+my machine (i.e. everything locks up for 1 second or more).
+
+[1-9,\+TgI].*\x09.*\x09.*[a-z].*\..*[a-z][a-z]\x09[1-9]
+
+In fact, with versions 0.3.0 and forward of the kernel patch (which look
+at multiple packets at once), all those .*'s can be so slow as to make
+you have to reboot your machine.  So be careful! This pattern is better,
+it makes some reasonable assumptions about what's likely to be in those
+freeform fields rather than being totally permissive:
+
+[1-9,\+TgI][\x09-\0d -~]*\x09[\x09-\0d -~]*\x09[a-z0-9\.]*\.[a-z][a-z].?.?\x09[1-9]
+
+Remember, if you're only expecting printable characters, don't use ".*", 
+use "[\x09-\x0d -~]*"!
 
 The recommended procedure for writing packets is this:
 
@@ -70,3 +94,4 @@ that are sent in your protocol.  Test it.
 
 4) Send your pattern to l7-filter-developers@lists.sf.net for it to be
 incorporated into the official pattern definitions.
+

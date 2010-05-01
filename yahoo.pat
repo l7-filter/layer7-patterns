@@ -18,7 +18,7 @@ yahoo
 # T means "login command"
 # (there are others, i.e. 0x01 "coming online", 0x02 "going offline",
 # 0x04 "changing status to available", 0x06 "user message", but W and T
-# should appear in the first few packets.
+# should appear in the first few packets.)
 # 0xC080 is the standard argument separator, it should appear not long
 # after the "type of command" byte.
 

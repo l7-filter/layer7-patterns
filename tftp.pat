@@ -14,7 +14,7 @@ tftp
 # the initiating host's packets, because the only identifying features of 
 # the responses to them are two byte sequences (which isn't specific enough).
 # (\x01|\x02) = Read Request or Write Request
-# .* = the file name
+# [ -~]* = the file name
 # the rest = netascii|octet|mail (case insensitivity done by the kernel)
 
-^(\x01|\x02).*(netascii|octet|mail)
+^(\x01|\x02)[ -~]*(netascii|octet|mail)

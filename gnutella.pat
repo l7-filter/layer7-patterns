@@ -10,4 +10,4 @@
 # http://lists.sourceforge.net/lists/listinfo/l7-filter-developers
 
 gnutella
-gnutella connect/.*x-ultrapeer|user-agent: bearshare|x-gnutella-content-urn
+gnutella connect/[\x09-\x0d -~]*x-ultrapeer|user-agent: bearshare|x-gnutella-content-urn

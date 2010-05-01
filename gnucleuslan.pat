@@ -5,4 +5,4 @@
 # l7-filter-developers@lists.sf.net .  This list may be subscribed to at
 # http://lists.sourceforge.net/lists/listinfo/l7-filter-developers
 gnucleuslan
-gnuclear connect/.*user-agent: gnucleus .*lan:
+gnuclear connect/[\x09-\x0d -~]*user-agent: gnucleus [\x09-\x0d -~]*lan:

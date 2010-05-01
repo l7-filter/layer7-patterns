@@ -10,7 +10,7 @@ smtp
 # there.  It (almost?) always has string "smtp" in it.  The RFC examples
 # does not, so we match those too, just in case anyone has copied them 
 # literally.
-220.* (e?smtp|simple mail)
+^220[\x09-\x0d -~]* (e?smtp|simple mail)
 
 # Some examples:
 # 220 mail.stalker.com ESMTP CommuniGate Pro 4.1.3

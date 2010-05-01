@@ -12,4 +12,4 @@
 
 irc
 # I'd rather this were less inclusive...
-^nick.*user.*:
+^nick[\x09-\x0d -~]*user[\x09-\x0d -~]*:

@@ -11,5 +11,5 @@
 #
 winmx
 # this needs to be more specific if possible, it matches when I connect to
-# irc.flamed.net
+# irc.flamed.net and also some http connections.
 \+.*p.*get

@@ -10,4 +10,4 @@
 directconnect
 # (client-to-client handshake)|(client-to-hub login, hub speaking)|
 # (client-to-hub login, client speaking)
-\$mynick.*\|\$lock.*\||\$lock.*pk=.*\|\$hubname.*\||\$key.*\|\$validatenick.*\|
+\$mynick[\x09-\x0d -~]*\|\$lock[\x09-\x0d -~]*\||\$lock[\x09-\x0d -~]*pk=[\x09-\x0d -~]*\|\$hubname[\x09-\x0d -~]*\||\$key[\x09-\x0d -~]*\|\$validatenick[\x09-\x0d -~]*\|

@@ -7,10 +7,7 @@
 # http://lists.sourceforge.net/lists/listinfo/l7-filter-developers
 
 ident
-# should limit to 5 digits, but that's a pain. Assumes whitespace is all spaces.
 # This is rather broad and could easily match things which aren't ident.
-^[0-9]+ *, *[0-9]+
+^[1-9][0-9]?[0-9]?[0-9]?[0-9]?[\x09-\x0d]*,[\x09-\x0d*[1-9][0-9]?[0-9]?[0-9]?[0-9]
 # or we could just match the server response (2nd packet of 2, usually)
 # ^[0-9]+ *, *[0-9]+ *: *USERID *:.*:
-# or if we had a decent regexp implementation
-#^[0-9]{1,5} *, *[0-9]{1,5}

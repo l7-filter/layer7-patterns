@@ -20,11 +20,11 @@ pop3
 #^(\+ok .*pop)
 
 # Here's another tack. I think this is my second favorite.
-#^(\+ok .*(ready|hello|pop|starting)|-err .*(invalid|unknown|unimplemented|unrecognized|command))
+#^(\+ok [\x09-\x0d -~]*(ready|hello|pop|starting)|-err [\x09-\x0d -~]*(invalid|unknown|unimplemented|unrecognized|command))
 
 # this matches the server saying "you have N messages that are M bytes",
 # which the client probably asks for early in the session (not tested)
-#\+ok [0-9]* [0-9]*
+#\+ok [0-9]+ [0-9]+
 
 # some sample servers:
 # RFC example:        +OK POP3 server ready <1896.697170952@dbc.mtview.ca.us>
@@ -47,4 +47,3 @@ pop3
 #-ERR Unknown AUTHORIZATION state command
 #-ERR Unrecognized command
 #-ERR Unknown command: "sadf'".
-

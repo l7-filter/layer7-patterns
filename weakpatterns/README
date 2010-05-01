@@ -1,16 +1,22 @@
-Patterns in this directory are weak in the sense that they will very likely 
-match things they are not intended to.  Some protocols just don't have much
-to latch on to.  It is recommended that you match on port number for these
-protocols.  You could use the patterns to verify that traffic on port X really
-is what is expected there.  That is, you should do:
+Patterns in this directory are weak in the sense that:
+
+(1) they will very likely match things they are not intended to.  
+(2) they are likely to miss a large fraction of things they should match
+or
+(3) they are too slow
+
+Some protocols just don't have much to latch on to.  It is recommended
+that you match on port number for these protocols.  You could use the
+patterns to verify that traffic on port X really is what is expected
+there.  That is, you should do:
 
 If ( on port 79 && looks like finger )
 	treat as finger;
 
-But NOT:
+But NOT simply:
 
 If ( looks like finger )
 	treat as finger;
 
 Actually, this is fairly good advice for most Internet standard protocols,
-but more so for these.
+but more so for things in this directory.
