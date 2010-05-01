@@ -1,5 +1,8 @@
-2003 09 05
-Improved x11, yahoo, bearshare.  Changed all patterns to use 0xHH
+2003 09 10
+Added dns, gopher.
+
+2003 09 05 
+Improved x11, yahoo. Added bearshare.  Changed all patterns to use \xHH
 notation instead of non-printable characters.  This release, therefore,
 MUST be used only with version >= 0.2.0 of the kernel patch.
 

@@ -1,10 +1,10 @@
 # Kazaa - Peer to Peer filesharing
 #
 # This pattern has worked for some people and not for others.
-# Please post to l7-filter-patterns@lists.sf.net as to whether it works 
+# Please post to l7-filter-developers@lists.sf.net as to whether it works 
 # for you or not.  If you believe it could be improved please post your 
 # suggestions to that list as well. You may subscribe to this list at 
-# http://lists.sourceforge.net/lists/listinfo/l7-filter-patterns
+# http://lists.sourceforge.net/lists/listinfo/l7-filter-developers
 
 kazaa
 # while this is a valid http request, this will be caught because
@@ -12,5 +12,5 @@ kazaa
 get /.hash=.* http/1.1|user-agent: kazaa
 
 # This is the pattern used by www.bandwidtharbitrator.com
-# It is unverified.  Does it work for you?  Post to the l7-filter-patterns
+# It is unverified.  Does it work for you?  Post to the l7-filter-developers
 # kazaa|icw.*]p

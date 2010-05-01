@@ -2,10 +2,10 @@
 # usually runs on port 69
 # 
 # This pattern is unconfirmed. 
-# Please post to l7-filter-patterns@lists.sf.net as to whether it works 
+# Please post to l7-filter-developers@lists.sf.net as to whether it works 
 # for you or not.  If you believe it could be improved please post your 
 # suggestions to that list as well. You may subscribe to this list at 
-# http://lists.sourceforge.net/lists/listinfo/l7-filter-patterns
+# http://lists.sourceforge.net/lists/listinfo/l7-filter-developers
 
 tftp
 # The first packet from the initiating host should either be a Read Request 

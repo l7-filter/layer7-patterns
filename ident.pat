@@ -3,8 +3,8 @@
 #
 # This pattern is believed to work.  If it does not
 # work for you, or you believe it could be improved, please post to 
-# l7-filter-patterns@lists.sf.net .  This list may be subscribed to at
-# http://lists.sourceforge.net/lists/listinfo/l7-filter-patterns
+# l7-filter-developers@lists.sf.net .  This list may be subscribed to at
+# http://lists.sourceforge.net/lists/listinfo/l7-filter-developers
 
 ident
 # should limit to 5 digits, but that's a pain. Assumes whitespace is all spaces.

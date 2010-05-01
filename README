@@ -7,10 +7,7 @@ The miniHOWTO at http://l7-filter.sf.net explains how to use these.
 These patterns should be used only with version >= 0.2.0 of the kernel patch.
 
 Please report your experience with these patterns to 
-l7-filter-patterns@lists.sf.net .  You may subscribe to this list at 
-http://lists.sourceforge.net/lists/listinfo/l7-filter-patterns
- 
-General discussion of the layer 7 classifier can be found on
-l7-filter-developers@lists.sf.net
+l7-filter-developers@lists.sf.net .  You may subscribe to this list at 
+http://lists.sourceforge.net/lists/listinfo/l7-filter-developers
 
 The HOWTO in this directory is a guide to writing patterns.

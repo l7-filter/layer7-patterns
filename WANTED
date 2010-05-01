@@ -10,16 +10,15 @@ LDAP - Lightweight Directory Access Protocol (RFC 2251)
 rlogin - remote login
 Citrix - Proprietary remote application access protocol
 Quake - A popular game
-DNS - Domain Name Service
 finger - remote user information protocol
 
 Below is the list of protocols supported by the Packeteer, a 
 commercial packet shaper.  This list is taken from page 197 of 
 http://www.packeteer.com/support/home/DSP/docs/archive/41manuals/refGuide/41.refguide.pdf
 We have sorted this list into several categories.  If you can contribute
-knowledge to this list, please post to l7-filter-patterns@lists.sf.net 
+knowledge to this list, please post to l7-filter-developers@lists.sf.net 
 You can subscribe to this list at 
-http://lists.sourceforge.net/lists/listinfo/l7-filter-patterns
+http://lists.sourceforge.net/lists/listinfo/l7-filter-developers
  
 done 	= We have a pattern for this
 don't 	= This is not a layer 7 protocol, or it isn't one that should be matched at layer 7
@@ -61,7 +60,7 @@ don't	DHCP-S				DHCP or BootP Server
 want	DLS				SNA and FNA over TCP transport--Service group classification of Data Link Switch traffic, both read and write port numbers
 ?	DLS-RPN				Data Link Switch Read Port Number
 ?	DLS-WPN				Data Link Switch Write Port Number
-want	DNS				Domain Name Service
+done	DNS				Domain Name Service
 want	Doom				Doom, the game
 want	DPA				Microsoft's Distributed Password Authentication
 ?	DRP				DECnet Routing Protocol
@@ -76,7 +75,7 @@ want	FIX				Financial Information eXchange
 done	FTP				File Transfer Protocol service group classification--both FTP commands and data
 want	FTP-Cmd				File Transfer Protocol command channel
 want	FTP-Data			File Transfer Protocol data transfer channel
-want	Gopher				Search application
+done	Gopher				Search application
 don't	GRE				General Routing Encapsulation
 want	Groupwise			Novell Groupwise messaging system
 want	Groupwise-MTA	 		Novell Groupwise Message Transfer Agent

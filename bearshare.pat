@@ -1,9 +1,8 @@
-# Bearshare: a Gnutella client.
+# Bearshare - a Gnutella client.
 # 
-# Please post to l7-filter-patterns@lists.sf.net if you can help
-# improve this pattern.  
-# You may subscribe at 
-# http://lists.sourceforge.net/lists/listinfo/l7-filter-patterns
+# Please post to l7-filter-developers@lists.sf.net if you can help
+# improve this pattern.  You may subscribe at 
+# http://lists.sourceforge.net/lists/listinfo/l7-filter-developers
 
 bearshare
 # This is the pattern used by www.bandwidtharbitrator.com
