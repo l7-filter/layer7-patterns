@@ -10,5 +10,6 @@
 # http://lists.sourceforge.net/lists/listinfo/l7-filter-patterns
 
 pressplay
+# can we do better than this?
 user-agent: nsplayer
 

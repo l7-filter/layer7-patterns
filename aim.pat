@@ -21,7 +21,7 @@ aim
 # version)
 # The fourth one is a command string, followed by some stuff, then the
 # beginning of the "roasted" password
-(\*(|).*)|(flapon)|(\*.?.?.?.?)|(toc_signon.*0x)
+(^\*(|).*)|(flapon)|(^\*.?.?.?.?)|(toc_signon.*0x)
 
 # pattern was just this:
 #\*(|).*

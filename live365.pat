@@ -10,5 +10,6 @@
 # http://lists.sourceforge.net/lists/listinfo/l7-filter-patterns
 
 live365
+# FIXME: what's going on here?
 membername.*session.*player
 

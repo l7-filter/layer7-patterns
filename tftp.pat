@@ -21,4 +21,4 @@ tftp
 # WARNING: This pattern uses non-printable characters.  Be careful when 
 # editing it!
 
-(|).*(netascii|octet|mail)
+^(|).*(netascii|octet|mail)

@@ -15,7 +15,7 @@
 # editing it!
 
 dhcp
-(|)[- ].*c‚sc
+^(|)[- ].*c‚sc
 
 # In hex, this reads: 
 # 28 01 7c 02 29 5b 01 2d 20 5d 3f 06 2e 2a 63 82 73 63

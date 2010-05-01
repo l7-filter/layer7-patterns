@@ -15,9 +15,15 @@ examples of what works.  We hope to eventually support identical syntax
 to GNU grep.  Unfortunately, bringing this fuctionality into kernel
 space is difficult.
 
-The l7-filter implements case insensitivity by calling tolower() on all
-bytes in each packet.  Therefore, use only lower case in pattern
-definitions.
+l7-filter is case insensitive.  Using upper case in your patterns is
+identical to using lower case. (Note that in versions <= 0.1.4, upper
+case characters in patterns never match.)
+
+l7-filter strips out nulls (0x00 bytes) in the packets it reads so that it can
+treat them as normal C strings.  Therefore, you can't match on nulls.  Also,
+fields may appear shorter than expected.  For example, if a protocol has a 
+4 byte field and some of those bytes can be null, the field can appear to
+be any length from 0 to 4.
 
 *** What the filter sees ***
 

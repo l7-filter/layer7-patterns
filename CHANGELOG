@@ -1,3 +1,9 @@
+2003 08 28
+Added irc, ident, x11.  Made a number of patterns more specific by adding
+a '^' at the beginning of the line.  Could have also added some $s at the end
+of lines, but in anticipation of matching across packets, didn't.
+Improved HOWTO.  
+
 2003 08 21
 Added counterstrike, live365, pressplay, winmx. Fixed gkrellm.
 Fixed several patterns that used uppercase letters, which can't ever

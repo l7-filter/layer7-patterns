@@ -1,5 +1,6 @@
-# Yahoo messenger - an instant messenger protocol
-# 
+# Yahoo messenger - an instant messenger protocol (http://yahoo.com)
+# Usually runs on port 5050 
+#
 # This pattern is untested. 
 # Please post to l7-filter-patterns@lists.sf.net as to whether it works 
 # for you or not.  If you believe it could be improved please post your 
@@ -11,7 +12,9 @@
 
 yahoo
 # http://www.venkydude.com/articles/yahoo.htm says: 
-# All Yahoo commands start with YMSG.
+# All Yahoo commands start with YMSG.  
+# (Well... http://ethereal.com/faq.html#q5.27 suggests that YPNS and YHOO
+# are also possible, so let's allow those)
 # The next 7 bytes contain command (packet?) length and version information
 # which we won't currently try to match.
 # W means "encryption challenge command"
@@ -22,7 +25,7 @@ yahoo
 # 0xC080 is the standard argument separator, it should appear not long
 # after the "type of command" byte.
 
-ymsg.......w.*À€
+^(ymsg|ypns|yhoo).......w.*À€
 
-# can't use upper case, 'cause we call tolower on everything
+# old patern.  Can't use upper case, 'cause we call tolower on everything
 #YMSG.......W.*À€
