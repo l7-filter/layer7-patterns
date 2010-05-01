@@ -109,10 +109,10 @@ want	MS-SQL			Service group for both Microsoft SQL Mon and Server traffic
 want	MS-SQL-Mon		Microsoft SQL Monitor
 want	MS-SQL-Server	 	Microsoft Structured Query Language (SQL) Server
 ?	NetBEUI			Service group for NetBEUI--Network protocol for PCs
-want	NetBIOS-IP		NetBIOS over IP
-want	NetBIOS-IP-DGM 		NetBIOS Datagram Service
+done?	NetBIOS-IP		NetBIOS over IP
+done?	NetBIOS-IP-DGM 		NetBIOS Datagram Service
 done	NetBIOS-IP-NS	 	NetBIOS Name Service
-want	NetBIOS-IP-SSN		NetBIOS Session Service
+done	NetBIOS-IP-SSN		NetBIOS Session Service
 want	NFS			Network File System (both TCP and UDP)
 want	NNTP (News)		Network News Transfer Protocol
 want	NTP			Network Time Protocol
@@ -184,7 +184,7 @@ want	Syslog			UNIX System Logging
 ?	T.120			Collaboration application
 ?	TACACS			Login host protocol
 don't	TCP			Transmission Control Protocol--all Internet TCP traffic (not auto-discovered)
-want	Telnet			Network terminal protocol
+done	Telnet			Network terminal protocol
 done	TFTP			Trivial File Transfer Protocol
 want	Timbuktu		Timbuktu Pro service group; networked remote control application
 want	Timbuktu-ctl		Timbuktu Control Channel

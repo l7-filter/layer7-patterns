@@ -1,3 +1,7 @@
+2003 09 19
+Added Samba, telnet.
+Added weakpatterns directory, which now contains mysql, finger, netbios.  
+
 2003 09 18
 Added directconnect.
 

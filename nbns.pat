@@ -6,13 +6,13 @@
 # http://lists.sourceforge.net/lists/listinfo/l7-filter-developers
 #
 # name query
-# \x01\x16 means name query
+# \x01\x10 means name query
 #
 # registration NB
-# (\x16 or )\x16 means registration
+# (\x10 or )\x10 means registration
 #
 # release NB (merged with registration)
-# 0\x16 means release
+# 0\x10 means release
 
 nbns
 \x01\x10\x01|\)\x10\x01\x01|0\x10\x01

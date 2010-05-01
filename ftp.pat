@@ -1,5 +1,8 @@
 # FTP - File Transfer Protocol (RFC 959)
-# Usually runs on port 21
+# Usually runs on port 21.  Note that the data stream is on a dynamically
+# assigned port, which means that you will need the FTP connection 
+# tracking module in your kernel to usefully match FTP data transfers.
+# 
 #
 # This is somewhat tested.  If it does not
 # work for you, or you believe it could be improved, please post to 

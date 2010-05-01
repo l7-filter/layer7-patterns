@@ -1,5 +1,9 @@
 # IRC - Internet Relay Chat - RFC 1459
 # Usually runs on port 6666 or 6667
+# Note that chat traffic runs on these ports, but IRC-DCC traffic (which
+# can use much more bandwidth) uses a dynamically assigned port, so you 
+# must have the IRC connection tracking module in your kernel to classify
+# this.
 #
 # This pattern has been tested and is believe to work well.  If it does not
 # work for you, or you believe it could be improved, please post to 

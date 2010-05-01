@@ -15,7 +15,7 @@
 # The first thing that is matchable is QDCOUNT, the number of queries.
 # Despite the fact that you can apparently ask for up to 65535
 # things at a time, usually you only ask for one and I doubt you ever ask for
-# zero.  Let's allow up to three, just in case (even though I can't find any 
+# zero.  Let's allow up to two, just in case (even though I can't find any 
 # situation that generates more than one).
 
 # Next comes the ANCOUNT, NSCOUNT, and ARCOUNT fields, which could be null
@@ -40,20 +40,9 @@
 # more specifics after this for the responses.
 
 dns
-[\x01-\x03].?.?.?.?.?.?[\x01-\x3F].*(aero|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|arpa|ac|ad|ae|af|ag|ai|al|am|an|ao|aq|ar|as|at|au|aw|az|ba|bb|bd|be|bf|bg|bh|bi|bj|bm|bn|bo|br|bs|bt|bv|bw|by|bz|ca|cc|cd|cf|cg|ch|ci|ck|cl|cm|cn|co|cr|cu|cv|cx|cy|cz|de|dj|dk|dm|do|dz|ec|ee|eg|eh|er|es|et|fi|fj|fk|fm|fo|fr|ga|gd|ge|gf|gg|gh|gi|gl|gm|gn|gp|gq|gr|gs|gt|gu|gw|gy|hk|hm|hn|hr|ht|hu|id|ie|il|im|in|io|iq|ir|is|it|je|jm|jo|jp|ke|kg|kh|ki|km|kn|kp|kr|kw|ky|kz|la|lb|lc|li|lk|lr|ls|lt|lu|lv|ly|ma|mc|md|mg|mh|mk|ml|mm|mn|mo|mp|mq|mr|ms|mt|mu|mv|mw|mx|my|mz|na|nc|ne|nf|ng|ni|nl|no|np|nr|nu|nz|om|pa|pe|pf|pg|ph|pk|pl|pm|pn|pr|ps|pt|pw|py|qa|re|ro|ru|rw|sa|sb|sc|sd|se|sg|sh|si|sj|sk|sl|sm|sn|so|sr|st|sv|sy|sz|tc|td|tf|tg|th|tj|tk|tm|tn|to|tp|tr|tt|tv|tw|tz|ua|ug|uk|um|us|uy|uz|va|vc|ve|vg|vi|vn|vu|wf|ws|ye|yt|yu|za|zm|zw)[\x01-\x10][\x01\0x03\0x04\xFF]
+# here's the sane way of doing it
+[\x01\x02].?.?.?.?.?.?[\x01-\x3F].*[a-z][a-z].*[\x01-\x10][\x01\0x03\0x04\xFF]
 
-# Use this if you think that searching thru the whole list of TLDs is too slow.
-# (which I do)
-# This just checks that there is at least a two letter string in there.
-# [\x01-\x03].?.?.?.?.?.?[\x01-\x3F].*[a-z][a-z].*[\x01-\x10][\x01\0x03\0x04\xFF]
-
-# http/1.1 200 ok..date: tue, 16 sep 2003 23:43:50 gmt..server: apache/2.0.45 (red hat linux)..last-modified: mon, 25
-# aug 2003 00:56:23 gmt..etag: "14100f5-57d3b-497bdbc0"..accept-ranges: bytes..content-length: 359739..connection:
-# close..content-type: application/x-rpm..........grip-3.0.7-0.dag.rh90........>..........,....0....@a.....
-# 0415c8e1687e527015597877c5bbfc08cef7e96b.{......g...}.......?..?i^...r.k.y.........v...&...*.1...8.......56.
-# c..0..fo.g.....>..........:4<?.4,.d..............................s.............................!.....%%.....a
-# .....y.....w.....}......].....].....]....l].....]....]].....]....0].....]...........]....d.....l$.....$....s$.(...
-# ..8.....9.....:..&..g...].h...].i. x].j. ...x. ...y. ...\.!.].]."|].^.&...b.(...d.)...e.)...f.)..
-
-# Sep 16 18:43:32 dsl093-017-216 kernel: layer7: stream 0xb7: found match: dns
-
+# here's the way of doing it if you have way more processing power than I do
+# and are very paranoid.
+#[\x01\x02].?.?.?.?.?.?[\x01-\x3F].*(aero|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|arpa|ac|ad|ae|af|ag|ai|al|am|an|ao|aq|ar|as|at|au|aw|az|ba|bb|bd|be|bf|bg|bh|bi|bj|bm|bn|bo|br|bs|bt|bv|bw|by|bz|ca|cc|cd|cf|cg|ch|ci|ck|cl|cm|cn|co|cr|cu|cv|cx|cy|cz|de|dj|dk|dm|do|dz|ec|ee|eg|eh|er|es|et|fi|fj|fk|fm|fo|fr|ga|gd|ge|gf|gg|gh|gi|gl|gm|gn|gp|gq|gr|gs|gt|gu|gw|gy|hk|hm|hn|hr|ht|hu|id|ie|il|im|in|io|iq|ir|is|it|je|jm|jo|jp|ke|kg|kh|ki|km|kn|kp|kr|kw|ky|kz|la|lb|lc|li|lk|lr|ls|lt|lu|lv|ly|ma|mc|md|mg|mh|mk|ml|mm|mn|mo|mp|mq|mr|ms|mt|mu|mv|mw|mx|my|mz|na|nc|ne|nf|ng|ni|nl|no|np|nr|nu|nz|om|pa|pe|pf|pg|ph|pk|pl|pm|pn|pr|ps|pt|pw|py|qa|re|ro|ru|rw|sa|sb|sc|sd|se|sg|sh|si|sj|sk|sl|sm|sn|so|sr|st|sv|sy|sz|tc|td|tf|tg|th|tj|tk|tm|tn|to|tp|tr|tt|tv|tw|tz|ua|ug|uk|um|us|uy|uz|va|vc|ve|vg|vi|vn|vu|wf|ws|ye|yt|yu|za|zm|zw)[\x01-\x10][\x01\0x03\0x04\xFF]
