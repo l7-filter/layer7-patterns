@@ -1,0 +1,3 @@
+#matches gnutella clients, verified with bearshare, may not work as well with others...
+gnutella
+gnutella connect/.*x-ultrapeer|user-agent: bearshare|x-gnutella-content-urn

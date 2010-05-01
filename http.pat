@@ -3,4 +3,6 @@ http
 # rather than the request so that other protocols which use
 # http (like kazaa) can be caught based on specific http requests
 # regardless of the ordering of the patterns...
-http.*200.*content-length: [0123456789]+.*content-type:
+# also matches posts
+(http.*(200 ok|302).*(connection:|content-type:|content-length:))|(post .* http/)
+
