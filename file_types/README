@@ -35,4 +35,4 @@ to all subsequent files of that connection, regardless of their content.
 3) Since the file starts later than the application layer protocol
 information, you may need to use /proc/net/layer7_numpackets to increase
 the number of packets examined. i.e. "echo 12 >
-/proc/net/layer7_numpackets"
+/proc/net/layer7_numpackets" (QoS version only.)

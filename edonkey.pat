@@ -25,3 +25,6 @@
 
 edonkey
 \xe3[\x01-\xff].?.?.?\x01.*\xc5[\x01-\xff].?.?.?\x01.*\xc5[\x01-\xff].?.?.?\x02.*\xe3[\x01-\xff].?.?.?\x4c
+
+# ipp2p essentially uses "\xe3....\x47", which seems to contradict the above.
+# More testing is clearly needed.

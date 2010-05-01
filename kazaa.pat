@@ -11,6 +11,8 @@ kazaa
 # the http pattern matches the response (and therefore the next packet)
 get /.hash=[\x09-\x0d -~]* http/1.1|user-agent: kazaa
 
+# the source of ipp2p suggests that "x-kazza-" may also help
+
 # This is the pattern used by www.bandwidtharbitrator.com
 # It is unverified.  Does it work for you?  Post to the l7-filter-developers
 # kazaa|icw.*]p

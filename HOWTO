@@ -4,42 +4,46 @@ Hello.  This is a guide for writing patterns for l7-filter.
 
 A pattern file consists of the name of the protocol on one line followed
 by a regular expression defining that protocol on one line.  Lines
-starting with # and blank lines are ignored.
+starting with # and blank lines are ignored.  At the moment, the name of the
+file must match the protocol defined in it.  i.e. if the protocol is "ftp",
+the file must be called "ftp.pat".
 
 *** Regular Expressions ***
 
 At the moment, l7-filter uses V8 regular expresions (see
 http://www.hmug.org/man/3/regsub.html).  In addition, we have added the
-capability to do perl-style non-printable character matches using the
-\xHH notation (i.e. to match a tab, use \x09).  Note that our regexps
-are more limited than the ones you may be used to (for instance,
-grep's). Notably, you CANNOT use bounds ("foo{3}" to match foofoofoo),
-character classes ("[[:punct:]]" to match any punctuation) or
-backreferences.  
+capability to do perl-style hex matches using the \xHH notation (i.e. to
+match a tab, use \x09).  Note that our regexps are more limited than the
+ones you may be used to (for instance, grep's). Notably, you CANNOT use
+bounds ("foo{3}" to match foofoofoo), character classes ("[[:punct:]]"
+to match any punctuation) or backreferences.  
 
 If you want to check for printable characters, including whitespace,
 [\x09-\0d -~] is a reasonable way of doing it.
 
 l7-filter is case insensitive.  Using upper case in your patterns is
-identical to using lower case.
+identical to using lower case.  This is largly because our regexp
+implementation doesn't have a case-insensitivity flag.
 
 l7-filter strips out nulls (0x00 bytes) in the packets it reads so that
 it can treat them as normal C strings.  Therefore, you can't match on
 nulls.  Also, fields may appear shorter than expected.  For example, if
-a protocol has a 4 byte field and some of those bytes can be null, the
+a protocol has a 4 byte field and any of those bytes can be null, the
 field can appear to be any length from 0 to 4.
 
-*** What The Filter Sees ***
+*** What The Classifier Sees ***
 
-The data to be matched is that of both the client and the server, in the
-order that it passes through the computer.  For instance, in FTP, the
-first thing the filter sees is "221 server ready", then "USER bob", then
-"331 send password", then "PASS frogbeard", and so on.
+If you have setup your computer as recommended, the data to be matched
+is that of both the client and the server, in the order that it passes
+through the computer. For instance, in FTP, the first thing the filter
+sees is "221 server ready", then "USER bob", then "331 send password",
+then "PASS frogbeard", and so on.
 
-At the moment, l7-filter cannot match across packets.  Therefore, our
-FTP pattern is "220.*ftp|331.*password".  We plan to implement matching
-across packets Real Soon Now.  Once this is done, the pattern for FTP
-will be "220.*USER.*331" (read ftp.pat for why this is better).
+At the moment, only the QoS version of l7-filter can match across
+packets.  Therefore, if you are using the QoS version, both
+"220.*ftp|331.*password" and "220.*USER.*331" will match.  If you are
+using the Netfilter version, only the first will match.  Hopefully,
+cross-packet matching will be added to the Netfilter version soon.
 
 *** What Makes A Good Pattern ***
 
@@ -47,14 +51,15 @@ There are two general guidelines:
 
 1) A pattern must be neither too specific nor not specific enough.  
 
-Example 1: "bear" for Bearshare is not specific enough.  This pattern
-could match a wide variety of non-Bearshare connections.  For instance a
-HTTP request for http://bear.com would be matched.
+	Example 1: The pattern "bear" for Bearshare is not specific enough. 
+	This pattern could match a wide variety of non-Bearshare connections. 
+	For instance a HTTP request for http://bear.com would be matched.
 
-Example 2: "220 .*ftp.*(\[.*\]|\(.*\))" for FTP is too specific.  Not
-all servers send ()s or []s after their 220.  In fact, servers are not
-required to send the string "ftp" at any time, but the vast majority
-do.  Good judgement and testing is necessary for instances such as this.
+	Example 2: "220 .*ftp.*(\[.*\]|\(.*\))" for FTP is too specific.  
+	Not all servers send ()s or []s after their 220.  In fact, servers 
+	are not even required to send the string "ftp" at any time, but the 
+	vast majority do.  Good judgement and testing are necessary for 
+	instances such as this.
 
 2) It should use a minimum of processing power.  Thus, if it is possible
 to reduce the number of *'s, +'s and |'s in your pattern, you should do
@@ -87,7 +92,7 @@ good way to write patterns that are overly specific!
 2) Use Ethereal (http://www.ethereal.com/) to watch packets of this
 protocol go by in a typical session of its use.  (If you failed to find
 a spec for your protocol, but Ethereal can parse it, reading the
-Ethereal source code may be worth your time.)
+Ethereal source code may also be worth your time.)
 
 3) Write a pattern that will reliably match one of the first few packets
 that are sent in your protocol.  Test it.

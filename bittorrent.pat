@@ -5,4 +5,9 @@
 # l7-filter-developers@lists.sf.net .  This list may be subscribed to at
 # http://lists.sourceforge.net/lists/listinfo/l7-filter-developers
 bittorrent
-bittorrent protocols
+
+# 0x13 is the length of "bittorrent protocol"
+\x13bittorrent protocol
+
+# pattern was this:
+# bittorrent protocols

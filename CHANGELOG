@@ -1,4 +1,11 @@
-2003 10 22
+2003 11 12
+Updated HOWTO to include Netfilter version, etc.
+Added comments regarding what I've learned from ipp2p (thanks to Eicke 
+Friedrich)
+Added applejuice, quake1, quakeworld.
+Improved (fixed?) bittorent.  
+
+2003 10 24
 Reverted to single packet ftp pattern. Minor revisions to malware/*
 
 2003 10 08
