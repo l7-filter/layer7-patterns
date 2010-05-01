@@ -1,3 +1,3 @@
 #matches the adds/news content downloaded by the AOL AIM client
-aolad
+aimwebcontent
 user-agent:aim/
