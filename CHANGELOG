@@ -1,4 +1,9 @@
-2003 09 2X
+2003 10 08
+Added eDonkey2000 pattern.  Added file_type directory (with html, ogg,
+pdf, perl, ps, rpm, tar and rtf).  Added malware directory (with Code Red
+and Nimda).
+
+2003 09 26
 I need to remember to include http in all the releases!  Sorry about that.
 Added jabber.
 

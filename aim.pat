@@ -1,6 +1,8 @@
 # AIM - AOL instant messenger (OSCAR and TOC)
 # Usually runs on port 5190
 #
+# This may also match ICQ traffic.
+# 
 # This pattern has been tested and is believe to work well.  If it does not
 # work for you, or you believe it could be improved, please post to 
 # l7-filter-developers@lists.sf.net .  This list may be subscribed to at

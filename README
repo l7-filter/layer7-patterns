@@ -12,6 +12,10 @@ to be really useful.  They are included because (1) they may be good enough
 for some purposes and (2) it will make it easier for people to improve them
 if there's something to start with.
 
+The "malware" directory contains patterns for viruses and worms.  The
+"file_types" directory contains patterns for file types.  Please read
+file_types/README if you plan to use any patterns in these directories.
+
 Please report your experience with these patterns to 
 l7-filter-developers@lists.sf.net .  You may subscribe to this list at 
 http://lists.sourceforge.net/lists/listinfo/l7-filter-developers

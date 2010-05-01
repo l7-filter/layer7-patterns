@@ -17,10 +17,10 @@
 # thing the server sends is a 331.  All the above servers also send 
 # something including "password" after this code.
 ftp
-^220[\x09-\x0d -~]*ftp|331[\x09-\x0d -~]*password
+#^220[\x09-\x0d -~]*ftp|331[\x09-\x0d -~]*password
 
 # This pattern is more precise, but takes longer to match. (3 packets vs. 1)
-#^220[\x09-\x0d -~]*\x0d\x0aUSER[\x09-\x0d -~]*\x0d\x0a331
+^220[\x09-\x0d -~]*\x0d\x0aUSER[\x09-\x0d -~]*\x0d\x0a331
 
 # same as above, but slightly less precise and only takes 2 packets.
 #^220[\x09-\x0d -~]*\x0d\x0aUSER[\x09-\x0d -~]*\x0d\x0a
