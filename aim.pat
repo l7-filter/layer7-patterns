@@ -1,4 +1,5 @@
 # AIM - AOL instant messenger (OSCAR and TOC)
+# Usually runs on port 5190
 #
 # This pattern has been tested and is believe to work well.  If it does not
 # work for you, or you believe it could be improved, please post to 
@@ -20,7 +21,7 @@ aim
 # version)
 # The fourth one is a command string, followed by some stuff, then the
 # beginning of the "roasted" password
-(\*(|).*)|(FLAPON)|(\*.?.?.?.?)|(toc_signon.*0x)
+(\*(|).*)|(flapon)|(\*.?.?.?.?)|(toc_signon.*0x)
 
 # pattern was just this:
 #\*(|).*

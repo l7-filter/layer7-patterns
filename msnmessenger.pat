@@ -5,4 +5,7 @@
 # l7-filter-patterns@lists.sf.net .  This list may be subscribed to at
 # http://lists.sourceforge.net/lists/listinfo/l7-filter-patterns
 msnmessenger
-ver .* msnp .* CVR|usr .* md5 i
+ver .* msnp .* cvr|usr .* md5 i
+
+# CVR needs to be lowercase becaues we call tolower() on everything
+#ver .* msnp .* CVR|usr .* md5 i

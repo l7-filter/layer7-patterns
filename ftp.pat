@@ -1,6 +1,7 @@
 # FTP - File Transfer Protocol (RFC 959)
+# Usually runs on port 21
 #
-# This pattern has been tested and is believed to work well.  If it does not
+# This is somewhat tested.  If it does not
 # work for you, or you believe it could be improved, please post to 
 # l7-filter-patterns@lists.sf.net .  This list may be subscribed to at
 # http://lists.sourceforge.net/lists/listinfo/l7-filter-patterns
@@ -18,7 +19,7 @@ ftp
 # when we can match across multiple packets, we can do this.  This will match
 # servers that choose not to say either "ftp" or "password", if any such 
 # servers exist.
-# 200.*331.*230
+# 200.*USER.*331
 
 # this is no good.  Not all servers have []s or ()s after 220, nor
 # is this required by the FTP RFC

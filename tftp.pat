@@ -1,4 +1,5 @@
 # TFTP - Trivial File Transfer Protocol - used for bootstrapping (RFC 1350)
+# usually runs on port 69
 # 
 # This pattern is unconfirmed. 
 # Please post to l7-filter-patterns@lists.sf.net as to whether it works 

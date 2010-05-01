@@ -1,8 +1,233 @@
-# this file contains a list of patterns that we would like to have
-# 
-# Jabber - an open instant messanger protocol (http://www.jabber.org)
-# Gadu-gadu - a popular Polish instant messenger protocol (so I'm told)
-# Zephyr - an instant messanger
-# ICQ - an instant messanger (with some relationship to AIM)
-# Telnet - old, insecure remote login protocol
-# LDAP - Lightweight Directory Access Protocol (RFC 2251)
+Here are some patterns that we'd like to have.  Please read HOWTO for
+information on writing patterns.
+ 
+Jabber - an open instant messanger protocol (http://www.jabber.org)
+Gadu-gadu - a popular Polish instant messenger protocol (so I'm told)
+Zephyr - an instant messanger
+ICQ - an instant messanger (with some relationship to AIM)
+Telnet - old, insecure remote login protocol
+LDAP - Lightweight Directory Access Protocol (RFC 2251)
+rlogin - remote login
+Xwindows - Standard unix graphical interface system
+Citrix - Proprietary remote application access protocol
+Quake - A popular game
+DNS - Domain Name Service
+finger - remote user information protocol
+
+Below is the list of protocols supported by the Packeteer, a 
+commercial packet shaper.  This list is taken from page 197 of 
+http://www.packeteer.com/support/home/DSP/docs/archive/41manuals/refGuide/41.refguide.pdf
+We have sorted this list into several categories.  If you can contribute
+knowledge to this list, please post to l7-filter-patterns@lists.sf.net 
+You can subscribe to this list at 
+http://lists.sourceforge.net/lists/listinfo/l7-filter-patterns
+ 
+done 	= We have a pattern for this
+don't 	= This is not a layer 7 protocol, or it isn't one that should be matched at layer 7
+maybe 	= Is there demand for this?
+want 	= Someone has asked for this and/or it seems obvious that we should have it
+? 	= Don't know well enough how it works to know what we should do
+
+?	ActiveX				Microsoft's object-oriented program technologies and tools
+want	AFP				AppleTalk Filing Protocol (AppleShare IP)
+dont	AppleTalk			Apple's network protocol
+?	AURP				AppleTalk Update-based Routing Protocol
+want	Baan 				Baan enterprise management system
+want	BackWeb (Polite) 		Push technology Polite BackWeb has an agent on the client to prevent BackWeb background traffic from interfering with other IP network applications
+?	BGP				Border Gateway Protocol
+want	Biff				UNIX new mail notification
+?	CBT				Core-based Trees (Multicast Routing Protocol)
+want	ccMail				cc:Mail email application
+?	CiscoDiscovery			Cisco Router Discovery Protocol
+want	Citrix				Connectivity application that enables any type of client to access applications	across any type of network connection.
+want	Citrix-ICA			Citrix ICA
+want	Citrix-SB		 	Citrix server browsing (UDP)
+?	Clarent-CC			Clarent Voice over IP Command Center
+?	Clarent-Complex			Clarent complex traffic
+?	Clarent-Mgmt			Clarent management traffic
+?	Clarent-Voice-S			Clarent voice traffic (simple)
+don't	Client				The client end of any connection (not auto-discovered)
+want	CORBA				CORBA Internet Inter-ORB Protocol (IIOP)
+?	CRS				Microsoft Content Replication Service and Distributed Password Authentication (Membership Broker)
+?	CU-Dev				Fujitsu Device Control (CU-DEV on TCP/IP)
+want	CUSeeMe				Internet telephone application service group
+want	CUSeeMe-av			Internet telephone audio/video
+want	CUSeeMe-ce			Internet telephone connection establishment
+want	CUSeeMe-cl			Internet telephone connection listener
+want	DCOM				Microsoft Distributed Component Object Model
+?	DECnet				Digital Equipment Corporation's network protocol
+done	DHCP				Dynamic Host Configuration Protocol
+don't	DHCP-C				DHCP or BootP Client
+don't	DHCP-S				DHCP or BootP Server
+want	DLS				SNA and FNA over TCP transport--Service group classification of Data Link Switch traffic, both read and write port numbers
+?	DLS-RPN				Data Link Switch Read Port Number
+?	DLS-WPN				Data Link Switch Write Port Number
+want	DNS				Domain Name Service
+want	Doom				Doom, the game
+want	DPA				Microsoft's Distributed Password Authentication
+?	DRP				DECnet Routing Protocol
+?	EGP				Network Routing Information (Exterior Gateway Protocol)
+?	EIGRP				Enhanced Interior Gateway Routing Protocol
+want	FileMaker Pro	 		Database Application
+want	Finger				Finger User Information Protocol
+want	FIX				Financial Information eXchange
+?	FNA				Fujitsu Network Architecture (a variant of SNA)
+?	FNAonTCP-1			Transport Independent Convergence - FNA on TCP port 492
+?	FNAonTCP-2			Transport Independent Convergence - FNA on TCP port 493
+done	FTP				File Transfer Protocol service group classification--both FTP commands and data
+want	FTP-Cmd				File Transfer Protocol command channel
+want	FTP-Data			File Transfer Protocol data transfer channel
+want	Gopher				Search application
+don't	GRE				General Routing Encapsulation
+want	Groupwise			Novell Groupwise messaging system
+want	Groupwise-MTA	 		Novell Groupwise Message Transfer Agent
+want	Groupwise-POA	 		Novell Groupwise Post Office Agent
+want	H.323				Internet telephony standard service group
+want	H.323-GKD			H.323 Gatekeeper Discovery
+want	H.323-H.245		 	H.323 call control
+want	H.323-Q.931		 	H.323 call setup
+want	H.323-RAS			H.323 Gatekeeper Control (Registration, Admission, and Status)
+done	HTTP (Web)			Web traffic--Hypertext Transport Protocol
+want	I-Phone				Phone service via the Internet
+don't	ICMP				Internet Control Message Protocol
+want	Ident				Identification Protocol
+don't	IGMP				Internet Group Management Protocol
+done	IMAP				Interactive Mail Access Protocol
+don't	IP				Internet Protocol (not auto-discovered)
+want?	IPSec				IP Security Encapsulation
+want?	IPSec-AH			IPSec Authentication Header
+want?	IPSec-ESP			IPSec Encapsulating Security Payload
+don't	IPv6				Internet Protocol version 6
+don't	IPX				Novell's networking protocol
+want	IRC				Internet Relay Chat
+don't	IRC-194				IRC on port 194
+don't	IRC-6665			IRC on port 6665 (server to server)
+don't	IRC-6667			IRC on port 6667 (client to server)
+?	ISAKMP				ISAKMP/IKE key exchange
+want	Kali				Gaming Protocol
+want	Kerberos			Network Authentication Service (ticket granting and checking)
+want	L2TP				Level 2 Tunneling Protocol for VPN connections (UDP encapsulation)
+don't?	LAT				DEC Printer Support (Local Area Transport)
+want	LDAP				Lightweight Directory Access Protocol
+?	Lockd				Lock Daemon
+want	LotusNotes			Groupware for collaborative communication
+want	Marimba				Marimba's Castanet push technology
+want	Micom-VIP			Micom Voice over IP (V/IP)
+want?	MPEG-Audio			Moving Picture Experts Group - Audio Streams
+want?	MPEG-Video			Moving Picture Experts Group - Video Streams
+?	MSSQ				Microsoft Message Queue Traffic
+?	MSSQ-CQ				MSSQ Client Queue
+?	MSSQ-IS				MSSQ Information Store
+?	MSSQ-Ping			MSSQ Ping Mechanism
+?	MSSQ-QMT			MSSQ Queue Manager Traffic
+?	MSSQ-SQ				MSSQ Server Queue
+want	MS-SQL				Service group for both Microsoft SQL Mon and Server traffic
+want	MS-SQL-Mon			Microsoft SQL Monitor
+want	MS-SQL-Server	 		Microsoft Structured Query Language (SQL) Server
+?	NetBEUI				Service group for NetBEUI--Network protocol for PCs
+want	NetBIOS-IP			NetBIOS over IP
+want	NetBIOS-IP-DGM 			NetBIOS Datagram Service
+done	NetBIOS-IP-NS	 		NetBIOS Name Service
+want	NetBIOS-IP-SSN			NetBIOS Session Service
+want	NFS				Network File System (both TCP and UDP)
+want	NNTP (News)		 	Network News Transfer Protocol
+want	NTP				Network Time Protocol
+want	NW5-CMD				Netware 5 - Compatibility Mode Drivers service group
+want?	NW5-CMD-TCP		 	Netware 5 - Compatibility Mode Drivers over TCP
+want?	NW5-CMD-UDP		 	Netware 5 - Compatibility Mode Drivers over UDP
+want	NW5-NCP				Netware 5 Core Protocol
+?	OpenConnect-JCP 		Browser-based access to host applications
+want	Oracle				Database application
+want	OracleClient			Oracle Java client (Webforms)
+want	Oracle-netv1			Oracle SQL*Net v1
+want	Oracle-netv2			Oracle SQL*Net v2
+want	Oracle 8i			Oracle 8i by database name
+want	OSI				OSI over TCP (RFC2126), e.g., Microsoft Exchange X.400
+?	OSPF				Network Routing Information (Open Shortest-Path First)
+want	pcAnywhere			Remote management collaboration tool
+want	pcAnywhere-D			pcAnywhere data
+want	pcAnywhere-OD	 		pcAnywhere data (old port)
+want	pcAnywhere-OS	 		pcAnywhere status (old port)
+want	pcAnywhere-S			pcAnywhere status
+?	PIM			 	Protocol-Independent Multicast Routing Protocol
+want	PointCast			Push technology application
+done	POP3 (Mail)		 	Post office protocol for email
+want	PPTP				Point-to-Point Tunneling Protocol
+want	Printer				UNIX line printer spooler (LPR)
+want	Quake				Quake, the game
+want	Quake-A				Quake 1
+want	Quake-B				Quake 2
+want	Quake-II-TCP			Quake over TCP
+want	Quake-II-UDP			Quake over UDP
+want	RADIUS				Service group for Remote Authentication Dial-in Service
+want	RADIUS-Acct			RADIUS accounting service
+want	RADIUS-Auth			RADIUS authentication service
+?	RARP				Reverse Address Resolution Protocol
+?	RC5DES				DES (data encryption standard) encryption-cracking application
+want	RDP				Remote Desktop Protocol--Microsoft's Windows Terminal Server
+want	RealAudio			Service group for RealAudio streaming audio/video application--both TCP	and UDP
+want	RealAudio-TCP			Streaming audio/video application TCP channel
+want	RealAudio-UDP			Streaming audio/video application UDP channel
+want	REXEC				UNIX remote execution protocol
+want	RIP				Routing Information Protocol (UDP)
+want	rlogin				Remote login
+?	RTCP-B				Real-time control protocol (broadcast)
+?	RTCP-I				Real-time control protocol (interactive)
+?	RTP-B				Real-time protocol (broadcast)
+?	RTP-I				Real-time protocol (interactive)
+done	RTSP				Real-time Streaming Protocol
+want?	rwho				Reports current users for all hosts on the local network
+want	SHOUTcast			Streaming audio
+want	SLP				Service Location Protocol
+want	SMS				Microsoft SMS (Systems Management Server) Help Desk
+want	SMS-Auth			Microsoft SMS authentication
+want	SMS-Chat			Microsoft SMS remote chat
+want	SMS-File			Microsoft SMS file transfer
+want	SMS-RC				Microsoft SMS remote control
+done	SMTP (Mail)		 	Simple Mail Transfer Protocol
+want	SNA				IBM's Systems Network Architecture protocol
+want	SNMP				Service group for both Simple Network Management Protocol monitor and traps
+want	SNMP Mon			Simple Network Management Protocol monitor
+want	SNMP Trap			Simple Network Management Protocol traps
+want	SOCKS				SOCKS Proxy Protocol
+?	Spanning Tree	 		IEEE802.1 Bridge Spanning Tree
+done	SSH				Secure shell remote login protocol
+done	SSL				Secure Sockets Layer protocol
+?	ST2				Internet Stream Protocol, version 2
+?	StreamWorks		 	StreamWorks Audio and Video
+want	SunRPC				Sun's Remote Procedure Calls (UDP)
+want	Syslog				UNIX System Logging
+?	T.120				Collaboration application
+?	TACACS				Login host protocol
+don't	TCP				Transmission Control Protocol--all Internet TCP traffic (not auto-discovered)
+want	Telnet				Network terminal protocol
+done	TFTP				Trivial File Transfer Protocol
+want	Timbuktu			Timbuktu Pro service group; networked remote control application
+want	Timbuktu-ctl			Timbuktu Control Channel
+want	Timbuktu-hs		 	Timbuktu Handshaking
+want	Timbuktu-obs			Timbuktu Observe Channel
+want	Timbuktu-snd			Timbuktu Send Channel
+want	Timbuktu-xch			Timbuktu Exchange Channel
+?	TN3270				Telnet for IBM 3270 terminals and 3270 emulation
+?	TN3287				IBM 3270 print traffic (TN3287 extensions)
+?	TN5250				IBM 5250 terminal traffic over Telnet
+?	TN5250p				IBM 5250 print traffic over Telnet
+don't	UDP				User Datagram Protocol--all Internet UDP traffic (not auto-discovered)
+want	UUCP				Unix-to-Unix Copy Protocol
+want	VDOPhone			Service group for Internet telephone application (not auto-discovered)
+want	VDOPhone-a			Internet telephone application--TCP port 1 (not auto-discovered)
+want	VDOPhone-b			Internet telephone application--TCP port 2 (not auto-discovered)
+want	VDOPhone-UDP			VDOPhone real-time media (not auto-discovered)
+want	Whois				Application that identifies the owner of a domain name
+want	WindowsMedia			Microsoft Windows Media Player
+want	WindowsMedia-T			Windows Media Streaming over TCP
+want	WindowsMedia-U			Windows Media Streaming over UDP
+want	WINS				Windows Internet Name Service
+want	XWindows			X11 Windowing agent (UDP)
+want	XWindows-DM			XWindows Display Manager (XDMCP)
+want	XWindows-S			XWindows Server
+done	YahooMsg			Yahoo! Messenger
+  
+
+
+

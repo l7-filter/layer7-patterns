@@ -1,4 +1,5 @@
 # RTSP - Real Time Streaming Protocol - http://www.rtsp.org/
+# usually runs on port 554
 #
 # To take full advantage of this pattern, please see the RTSP connection 
 # tracking patch to the Linux kernel referenced at the above site.

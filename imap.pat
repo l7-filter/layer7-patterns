@@ -1,4 +1,5 @@
 # IMAP - Internet Message Access Protocol (A common e-mail protocol)
+# This matches IMAP4 and probably IMAP2
 #
 # This pattern has been tested and is believed to work well.  If it does not
 # work for you, or you believe it could be improved, please post to 

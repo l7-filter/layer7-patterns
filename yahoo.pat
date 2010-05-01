@@ -21,4 +21,8 @@ yahoo
 # should appear in the first few packets.
 # 0xC080 is the standard argument separator, it should appear not long
 # after the "type of command" byte.
-YMSG.......W.*À€
+
+ymsg.......w.*À€
+
+# can't use upper case, 'cause we call tolower on everything
+#YMSG.......W.*À€

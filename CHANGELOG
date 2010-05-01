@@ -1,0 +1,13 @@
+2003 08 21
+Added counterstrike, live365, pressplay, winmx. Fixed gkrellm.
+Fixed several patterns that used uppercase letters, which can't ever
+match.  Will fix the kernel patch soon so that this doesn't matter.
+Got rid of the #s in files like this one.  They were annoying.  
+Just use "*.pat" in your scripts instead of "*".
+Added pattern writing HOWTO.
+ 
+2003 08 19
+Fixed ftp.  Added gkrellm. Simplified tftp.
+
+2003 08 09
+Fixed dhcp.  Added tftp.  Improved aim.
