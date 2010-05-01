@@ -14,7 +14,7 @@
 # thing the server sends is a 331.  All the above servers also send 
 # something including "password" after this code.
 ftp
-220.*ftp|331.*password
+^220.*ftp|331.*password
 
 # when we can match across multiple packets, we can do this.  This will match
 # servers that choose not to say either "ftp" or "password", if any such 

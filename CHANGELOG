@@ -1,3 +1,9 @@
+2003 09 18
+Added directconnect.
+
+2003 09 15
+Added biff.  Fixed pop3 again.  Improved SMTP.
+
 2003 09 14
 Added rlogin.
 

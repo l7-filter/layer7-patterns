@@ -10,21 +10,21 @@
 pop3
 
 # this the most conservative pattern.  It should definitely work.
-#^(+ok|-err)
+#^(\+ok|-err)
 
 # this pattern assumes that the server says _something_ after +ok or -err
 # I think this is probably the way to go.
-^(+ok |-err )
+^(\+ok |-err )
 
 # more that 90% of servers seem to say "pop" after "+ok", but not all.
-#^(+ok .*pop)
+#^(\+ok .*pop)
 
 # Here's another tack. I think this is my second favorite.
-#^(+ok .*(ready|hello|pop|starting)|-err .*(invalid|unknown|unimplemented|unrecognized|command))
+#^(\+ok .*(ready|hello|pop|starting)|-err .*(invalid|unknown|unimplemented|unrecognized|command))
 
 # this matches the server saying "you have N messages that are M bytes",
 # which the client probably asks for early in the session (not tested)
-#+ok [0-9]* [0-9]*
+#\+ok [0-9]* [0-9]*
 
 # some sample servers:
 # RFC example:        +OK POP3 server ready <1896.697170952@dbc.mtview.ca.us>
