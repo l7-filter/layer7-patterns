@@ -15,9 +15,9 @@ tftp
 # the responses to them are two byte sequences (which isn't specific enough).
 # (0x01|0x02) = Read Request or Write Request
 # .* = the file name
-# the rest = netascii|octet|mail, case insensitive
+# the rest = netascii|octet|mail (case insensitivity done by the kernel)
 
 # WARNING: This pattern uses non-printable characters.  Be careful when 
 # editing it!
 
-(|).*([nN][eE][tT][aA][sS][cC][iI][iI]|[oO][cC][tT][eE][tT]|[mM][aA][iI][lL])
+(|).*(netascii|octet|mail)
