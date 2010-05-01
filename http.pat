@@ -17,7 +17,7 @@ http
 # Status-Line = HTTP-Version SP Status-Code SP Reason-Phrase CRLF (rfc 2616)
 # As specified in rfc 2616 a status code is preceeded and followed by a
 # space. 
-(http.*(200 ok|302 |304 ).*(connection:|content-type:|content-length:))|(post .* http/)
+^(http.*(200 ok|302 |304 ).*(connection:|content-type:|content-length:))|^(post .* http/)
 
 # I think this should work, but I'm going to consult others and read more 
 # before making it official:

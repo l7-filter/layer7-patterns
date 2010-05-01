@@ -7,7 +7,6 @@ Zephyr - an instant messanger
 ICQ - an instant messanger (with some relationship to AIM)
 Telnet - old, insecure remote login protocol
 LDAP - Lightweight Directory Access Protocol (RFC 2251)
-rlogin - remote login
 Citrix - Proprietary remote application access protocol
 Quake - A popular game
 finger - remote user information protocol
@@ -88,7 +87,7 @@ want	H.323-RAS			H.323 Gatekeeper Control (Registration, Admission, and Status)
 done	HTTP (Web)			Web traffic--Hypertext Transport Protocol
 want	I-Phone				Phone service via the Internet
 don't	ICMP				Internet Control Message Protocol
-want	Ident				Identification Protocol
+done	Ident				Identification Protocol
 don't	IGMP				Internet Group Management Protocol
 done	IMAP				Interactive Mail Access Protocol
 don't	IP				Internet Protocol (not auto-discovered)
@@ -97,7 +96,7 @@ want?	IPSec-AH			IPSec Authentication Header
 want?	IPSec-ESP			IPSec Encapsulating Security Payload
 don't	IPv6				Internet Protocol version 6
 don't	IPX				Novell's networking protocol
-want	IRC				Internet Relay Chat
+done	IRC				Internet Relay Chat
 don't	IRC-194				IRC on port 194
 don't	IRC-6665			IRC on port 6665 (server to server)
 don't	IRC-6667			IRC on port 6667 (client to server)

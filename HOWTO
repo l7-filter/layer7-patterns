@@ -2,28 +2,29 @@ Hello.  This is a guide for writing patterns for l7-filter.
 
 *** File Format ***
 
-A pattern file consists of the name of the protocol on one line followed by 
-a regular expression defining that protocol.  Lines starting with # and 
-blank lines are ignored.
+A pattern file consists of the name of the protocol on one line followed
+by a regular expression defining that protocol on one line.  Lines
+starting with # and blank lines are ignored.
 
 *** Regular Expressions ***
 
-At the moment, l7-filter uses V8 regexps, which are somewhat limited
-(see http://www.hmug.org/man/3/regsub.html). In addition, we have added
-the capability to do perl-style non-printable character matches using
-the \xHH notation (i.e. to match a tab, use \x09). Notably, you CANNOT
-use bounds ("foo{3}" to match foofoofoo), character classes
-("[[:punct:]]" to match any punctuation) or backreferences.
+At the moment, l7-filter uses V8 regular expresions (see
+http://www.hmug.org/man/3/regsub.html).  In addition, we have added the
+capability to do perl-style non-printable character matches using the
+\xHH notation (i.e. to match a tab, use \x09).  Note that our regexps
+are more limited than the ones you may be used to (for instance,
+grep's). Notably, you CANNOT use bounds ("foo{3}" to match foofoofoo),
+character classes ("[[:punct:]]" to match any punctuation) or
+backreferences.
 
 l7-filter is case insensitive.  Using upper case in your patterns is
-identical to using lower case. (Note that in versions <= 0.1.4, upper
-case characters in patterns never match.)
+identical to using lower case.
 
-l7-filter strips out nulls (0x00 bytes) in the packets it reads so that it can
-treat them as normal C strings.  Therefore, you can't match on nulls.  Also,
-fields may appear shorter than expected.  For example, if a protocol has a 
-4 byte field and some of those bytes can be null, the field can appear to
-be any length from 0 to 4.
+l7-filter strips out nulls (0x00 bytes) in the packets it reads so that
+it can treat them as normal C strings.  Therefore, you can't match on
+nulls.  Also, fields may appear shorter than expected.  For example, if
+a protocol has a 4 byte field and some of those bytes can be null, the
+field can appear to be any length from 0 to 4.
 
 *** What the filter sees ***
 
