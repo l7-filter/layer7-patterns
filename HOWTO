@@ -39,7 +39,7 @@ first thing the filter sees is "221 server ready", then "USER bob", then
 At the moment, l7-filter cannot match across packets.  Therefore, our
 FTP pattern is "220.*ftp|331.*password".  We plan to implement matching
 across packets Real Soon Now.  Once this is done, the pattern for FTP
-will be "200.*USER.*331" (read ftp.pat for why this is better).
+will be "220.*USER.*331" (read ftp.pat for why this is better).
 
 *** What Makes A Good Pattern ***
 
