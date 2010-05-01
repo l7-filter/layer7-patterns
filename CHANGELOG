@@ -1,3 +1,6 @@
+2003 10 22
+Reverted to single packet ftp pattern. Minor revisions to malware/*
+
 2003 10 08
 Added eDonkey2000 pattern.  Added file_type directory (with html, ogg,
 pdf, perl, ps, rpm, tar and rtf).  Added malware directory (with Code Red
